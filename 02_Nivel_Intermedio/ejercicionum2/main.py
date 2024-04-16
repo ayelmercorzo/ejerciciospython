@@ -36,7 +36,8 @@ def dependencia_mayor_co2():
     if not dependencias:
         print("No hay dependencias registradas.")
         return
-
+    os.system('cls')
+    print("LA DEPENDENCIA QUE PRODUCE MAYOR CO2 ES: ")
     mayor_emisiones = max(dependencias, key=lambda d: d.calcular_consumo_kwh())
     mostrar_informacion_dependencia(mayor_emisiones)
 
@@ -50,7 +51,7 @@ def main():
     }
     os.system("cls")
     while True:
-        print("\n** Menú principal **")
+        print("\n---Menú principal---")
         print("1. Registrar una dependencia")
         print("2. Registrar consumo por dependencia")
         print("3. Ver CO2 producido por dependencia")

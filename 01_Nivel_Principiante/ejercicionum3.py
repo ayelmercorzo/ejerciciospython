@@ -15,10 +15,10 @@ obesidad_grado_II = 0
 obesidad_grado_III = 0
 sobrepeso = 0
 
-estudiantes = int(input("¿Cuantos estudiantes desea ingresar?"))
+estudiantes = int(input("Cuantos estudiantes desea ingresar: "))
 
 for i in range(0,estudiantes,1):
-    print ("--Estudiante "+str(i+1)+ "--")
+    print ("Estudiante "+str(i+1)+ "")
     peso = float(input("Ingrese el peso en kg: "))
     altura = float(input("Ingrese la altura en m: "))
 

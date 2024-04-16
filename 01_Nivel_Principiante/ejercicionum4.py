@@ -11,7 +11,6 @@
 import os
 Total_de_números_ingresados = int(input("¿Cuántos números quieres ingresar?: "))
 
-# Variables para contar y calcular estadísticas
 numeros_par = 0
 totalDePares = 0
 numeros_impar = 0

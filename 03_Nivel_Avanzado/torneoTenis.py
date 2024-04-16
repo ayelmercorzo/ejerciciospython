@@ -21,18 +21,18 @@ class torneoTenis:
                (categoria == 'Intermedio' and 17 <= edad <= 20) or \
                (categoria == 'Avanzado' and edad > 20):
                 self.categoria[categoria].append(jugador)
-                print(f"{nombre} Se encuentra en el torneo de tenis de mesa de la categoriaría {categoria}")
+                print(f"{nombre} se registro correctamente en la categoria: {categoria}")
             else:
-                print(f"{nombre} es demasiado joven o viejo para ser novato, intermedio o avanzado")
+                print(f"{nombre} Es muy joven o viejo para ser novato, intermedio o avanzado")
         else:
-            print("Hay un problema, no se encuentra esa categoria.")
+            print("No se encuentra la categoria")
 
     def inicioDeTorneo(self):
         for categoria, jugadores in self.categoria.items():
             if len(jugadores) < 5:
-                print(f"Hace falta más jugadores en la categoria {categoria} para poder iniciar el torneo")
+                print(f"Faltan jugadores en la categoria: {categoria} para comenzar")
             else:
-                print(f"Comienza el torneo de tenis de mesa en la categoriaría {categoria}")
+                print(f"Comenzo el torneo de la categoria: {categoria}")
 
     def registrar_partido(self, id_winningPlayer, id_losingPlayer, punt_ganador, punt_perdedor):
         winningPlayer = None
@@ -51,31 +51,31 @@ class torneoTenis:
             winningPlayer.wonPlayes += 1
             losingPlayer.lostGames += 1
             winningPlayer.plusPoints += punt_ganador - punt_perdedor
-            print("El partido fue registrado con exito")
+            print("El juego fue registrado correctamente")
         else:
-            print("Hubo un error, no se encontro ninguno de los jugadores.")
+            print("No hay ningun registro de ese jugador")
 
     def showStatistics(self):
         for categoria, jugadores in self.categoria.items():
-            print(f"--- categoriaría: {categoria} ---")
-            print("ID Jugador Partidos Jugados Partidos Ganados Partidos Perdidos punt a Favor")
+            print(f"categoria: {categoria} ")
+            print("| ID | Jugador | Partidos Jugados | Partidos Ganados | Partidos Perdidos | punt a Favor |")
             for jugador in jugadores:
-                print(f"{jugador.jugadorIdentificacion}   {jugador.nombre} {jugador.gamesplayed} {jugador.wonPlayes} {jugador.lostGames} {jugador.plusPoints}")
+                print(f"""|{jugador.jugadorIdentificacion}| |{jugador.nombre}| |{jugador.gamesplayed}| |{jugador.wonPlayes}| |{jugador.lostGames}| |{jugador.plusPoints}|""")
 
     def obtencionDeGanadorCtg(self, categoria):
         if categoria in self.categoria.keys():
             jugadores_categoria = self.categoria[categoria]
             if jugadores_categoria:
                 ganador = max(jugadores_categoria, key=lambda jugador: jugador.plusPoints)
-                print(f"¡El ganador que esta en la categoriaría {categoria} es {ganador.nombre} con {ganador.plusPoints} punt a favor!")
+                print(f"Hay un ganador en esta categoria: {categoria} es {ganador.nombre} con {ganador.plusPoints} puntos a favor!")
             else:
-                print(f"No se encontro jugadores registrados en la categoria {categoria}.")
+                print(f"No hay jugadores en esta categoria: {categoria}.")
         else:
-            print("¡Esta categoria no se encuntra registrada, coloca una valida!")
+            print("La categoria no existe")
 
 def regis_jugador_manualmente(torneo):
-    jugadorIdentificacion = int(input("Siguiente opc, ingresa el ID del jugador: "))
-    nombre = input("¿Cual es el nombrebre del jugador?: ")
-    edad = int(input("Escriba los edad que tiene?: "))
-    categoria = input("¿Selecciona la categoria en la que quieres inscribirlo? (Novato/Intermedio/Avanzado): ")
+    jugadorIdentificacion = int(input("A seguir la opcion, ingresa la identificacion del jugador: "))
+    nombre = input("Cual es el nombrebre del jugador: ")
+    edad = int(input("Escriba los edad que tiene: "))
+    categoria = input("Escribe como esta en las opciones: (Novato/Intermedio/Avanzado) ")
     torneo.registroDeJugador(jugadorIdentificacion, nombre, edad, categoria)

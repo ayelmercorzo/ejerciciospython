@@ -1,6 +1,6 @@
 from inventario import Inventario
-
 def mostrar_menu():
+    
     print("\n \t**Menú Principal**")
     print(" 1. Ingresa un producto")
     print(" 2. Revise los productos registrados")

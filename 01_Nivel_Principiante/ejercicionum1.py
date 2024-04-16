@@ -8,4 +8,4 @@ a = int(input("Digite un primer numero entero : "))
 b = int(input("Digite un primer numero entero : "))
 c = int(input("Digite un primer numero entero : "))
 
-print(int(a+b+c))
+print(int("La Suma es: ",a+b+c))

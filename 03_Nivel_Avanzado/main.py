@@ -23,21 +23,21 @@ def main():
         elif opc == "2":
             torneo.inicioDeTorneo()
         elif opc == "3":
-            id_winningPlayer = int(input("Escribe el ID del jugador ganador: "))
-            id_losingPlayer = int(input("Escribe el ID del jugador perdedor: "))
-            punt_ganador = int(input("Caules fueron los punt del jugador ganador: "))
-            punt_perdedor = int(input("Cuales fueron los punt del jugador perdedor: "))
+            id_winningPlayer = int(input("Digite la identificacion del jugador ganador: "))
+            id_losingPlayer = int(input("Digite la identificacion del jugador perdedor: "))
+            punt_ganador = int(input("Ingresa los puntos a favor del jugador ganador: "))
+            punt_perdedor = int(input("Ingresa los puntos a favor del jugador perdedor: "))
             torneo.registrar_partido(id_winningPlayer, id_losingPlayer, punt_ganador, punt_perdedor)
         elif opc == "4":
             torneo.showStatistics()
         elif opc == "5":
-            categoria = input("¿Escoge la categoría en la que quieres conocer al ganador?: ")
+            categoria = input("Elige la categoria que quieres ver el ganador: ")
             torneo.obtener_ganador_catego(categoria)
         elif opc == "6":
-            print("¡Haz finalizado, hasta luego!")
+            print("Termino El Codigo")
             break
         else:
-            print("La pción que ingresaste no es válida. Coloca una opción del 1 al 6 de lo contrario sera erroneo.")
+            print("El numero que ingresaste no existe. Ingresa un numero entre (1-6)")
 
 if __name__ == "__main__":
     main()
